@@ -13,7 +13,35 @@
 		019FAE5F20E0EB5B0064AB0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019FAE5E20E0EB5B0064AB0A /* Assets.xcassets */; };
 		019FAE6220E0EB5B0064AB0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019FAE6020E0EB5B0064AB0A /* LaunchScreen.storyboard */; };
 		019FAE6B20E0EBDF0064AB0A /* VideoComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FAE6A20E0EBDF0064AB0A /* VideoComposition.swift */; };
+		019FAE7320E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FAE7220E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests.swift */; };
+		019FAE7E20E1E4B80064AB0A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019FAE7D20E1E4B80064AB0A /* Quick.framework */; };
+		019FAE8020E1E4CC0064AB0A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019FAE7F20E1E4CC0064AB0A /* Nimble.framework */; };
+		019FAE8320E1E9030064AB0A /* VideoComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FAE6A20E0EBDF0064AB0A /* VideoComposition.swift */; };
+		019FAE8520E1F7F90064AB0A /* VideoFileSystemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FAE8420E1F7F90064AB0A /* VideoFileSystemHelper.swift */; };
+		019FAE8620E1F7F90064AB0A /* VideoFileSystemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FAE8420E1F7F90064AB0A /* VideoFileSystemHelper.swift */; };
+		019FAE8820E1F85D0064AB0A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FAE8720E1F85D0064AB0A /* Logger.swift */; };
+		019FAE8920E1F85D0064AB0A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FAE8720E1F85D0064AB0A /* Logger.swift */; };
+		019FAE8B20E1F8C30064AB0A /* List+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FAE8A20E1F8C30064AB0A /* List+Extension.swift */; };
+		019FAE8C20E1F8C30064AB0A /* List+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FAE8A20E1F8C30064AB0A /* List+Extension.swift */; };
+		019FAE9220E1FB9E0064AB0A /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 019FAE8E20E1FB9D0064AB0A /* Readme.md */; };
+		019FAE9320E1FB9E0064AB0A /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 019FAE8E20E1FB9D0064AB0A /* Readme.md */; };
+		019FAE9420E1FB9E0064AB0A /* Dog on Boat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 019FAE8F20E1FB9D0064AB0A /* Dog on Boat.mp4 */; };
+		019FAE9520E1FB9E0064AB0A /* Dog on Boat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 019FAE8F20E1FB9D0064AB0A /* Dog on Boat.mp4 */; };
+		019FAE9620E1FB9E0064AB0A /* Close Up Video Of Flower.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 019FAE9020E1FB9D0064AB0A /* Close Up Video Of Flower.mp4 */; };
+		019FAE9720E1FB9E0064AB0A /* Close Up Video Of Flower.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 019FAE9020E1FB9D0064AB0A /* Close Up Video Of Flower.mp4 */; };
+		019FAE9820E1FB9E0064AB0A /* Bubble Turning Into Ice.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 019FAE9120E1FB9D0064AB0A /* Bubble Turning Into Ice.mp4 */; };
+		019FAE9920E1FB9E0064AB0A /* Bubble Turning Into Ice.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 019FAE9120E1FB9D0064AB0A /* Bubble Turning Into Ice.mp4 */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		019FAE7520E1E4A20064AB0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 019FAE4C20E0EB590064AB0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 019FAE5320E0EB590064AB0A;
+			remoteInfo = Demo_VideoLayerComposition_iOS;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		019FAE5420E0EB590064AB0A /* Demo_VideoLayerComposition_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_VideoLayerComposition_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +52,19 @@
 		019FAE6120E0EB5B0064AB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019FAE6320E0EB5B0064AB0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		019FAE6A20E0EBDF0064AB0A /* VideoComposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoComposition.swift; sourceTree = "<group>"; };
+		019FAE7020E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo_VideoLayerComposition_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		019FAE7220E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_VideoLayerComposition_iOSTests.swift; sourceTree = "<group>"; };
+		019FAE7420E1E4A20064AB0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		019FAE7B20E1E4B80064AB0A /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		019FAE7D20E1E4B80064AB0A /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		019FAE7F20E1E4CC0064AB0A /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		019FAE8420E1F7F90064AB0A /* VideoFileSystemHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFileSystemHelper.swift; sourceTree = "<group>"; };
+		019FAE8720E1F85D0064AB0A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		019FAE8A20E1F8C30064AB0A /* List+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+Extension.swift"; sourceTree = "<group>"; };
+		019FAE8E20E1FB9D0064AB0A /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		019FAE8F20E1FB9D0064AB0A /* Dog on Boat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dog on Boat.mp4"; sourceTree = "<group>"; };
+		019FAE9020E1FB9D0064AB0A /* Close Up Video Of Flower.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Close Up Video Of Flower.mp4"; sourceTree = "<group>"; };
+		019FAE9120E1FB9D0064AB0A /* Bubble Turning Into Ice.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bubble Turning Into Ice.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,14 +75,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		019FAE6D20E1E4A20064AB0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				019FAE7E20E1E4B80064AB0A /* Quick.framework in Frameworks */,
+				019FAE8020E1E4CC0064AB0A /* Nimble.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		019FAE4B20E0EB590064AB0A = {
 			isa = PBXGroup;
 			children = (
+				019FAE8D20E1FB9D0064AB0A /* Assets */,
 				019FAE5620E0EB590064AB0A /* Demo_VideoLayerComposition_iOS */,
+				019FAE7120E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests */,
 				019FAE5520E0EB590064AB0A /* Products */,
+				019FAE7A20E1E4B80064AB0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				019FAE5420E0EB590064AB0A /* Demo_VideoLayerComposition_iOS.app */,
+				019FAE7020E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +112,7 @@
 			children = (
 				019FAE6920E0EBCC0064AB0A /* VideoProcessing */,
 				019FAE5720E0EB590064AB0A /* AppDelegate.swift */,
+				019FAE8720E1F85D0064AB0A /* Logger.swift */,
 				019FAE5920E0EB590064AB0A /* ViewController.swift */,
 				019FAE5B20E0EB590064AB0A /* Main.storyboard */,
 				019FAE5E20E0EB5B0064AB0A /* Assets.xcassets */,
@@ -70,9 +125,41 @@
 		019FAE6920E0EBCC0064AB0A /* VideoProcessing */ = {
 			isa = PBXGroup;
 			children = (
+				019FAE8420E1F7F90064AB0A /* VideoFileSystemHelper.swift */,
 				019FAE6A20E0EBDF0064AB0A /* VideoComposition.swift */,
+				019FAE8A20E1F8C30064AB0A /* List+Extension.swift */,
 			);
 			path = VideoProcessing;
+			sourceTree = "<group>";
+		};
+		019FAE7120E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				019FAE7220E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests.swift */,
+				019FAE7420E1E4A20064AB0A /* Info.plist */,
+			);
+			path = Demo_VideoLayerComposition_iOSTests;
+			sourceTree = "<group>";
+		};
+		019FAE7A20E1E4B80064AB0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				019FAE7F20E1E4CC0064AB0A /* Nimble.framework */,
+				019FAE7B20E1E4B80064AB0A /* Nimble.framework */,
+				019FAE7D20E1E4B80064AB0A /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		019FAE8D20E1FB9D0064AB0A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				019FAE8E20E1FB9D0064AB0A /* Readme.md */,
+				019FAE8F20E1FB9D0064AB0A /* Dog on Boat.mp4 */,
+				019FAE9020E1FB9D0064AB0A /* Close Up Video Of Flower.mp4 */,
+				019FAE9120E1FB9D0064AB0A /* Bubble Turning Into Ice.mp4 */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +182,24 @@
 			productReference = 019FAE5420E0EB590064AB0A /* Demo_VideoLayerComposition_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		019FAE6F20E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 019FAE7920E1E4A20064AB0A /* Build configuration list for PBXNativeTarget "Demo_VideoLayerComposition_iOSTests" */;
+			buildPhases = (
+				019FAE6C20E1E4A20064AB0A /* Sources */,
+				019FAE6D20E1E4A20064AB0A /* Frameworks */,
+				019FAE6E20E1E4A20064AB0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				019FAE7620E1E4A20064AB0A /* PBXTargetDependency */,
+			);
+			name = Demo_VideoLayerComposition_iOSTests;
+			productName = Demo_VideoLayerComposition_iOSTests;
+			productReference = 019FAE7020E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -106,6 +211,10 @@
 				TargetAttributes = {
 					019FAE5320E0EB590064AB0A = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					019FAE6F20E1E4A20064AB0A = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 019FAE5320E0EB590064AB0A;
 					};
 				};
 			};
@@ -123,6 +232,7 @@
 			projectRoot = "";
 			targets = (
 				019FAE5320E0EB590064AB0A /* Demo_VideoLayerComposition_iOS */,
+				019FAE6F20E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -134,7 +244,22 @@
 			files = (
 				019FAE6220E0EB5B0064AB0A /* LaunchScreen.storyboard in Resources */,
 				019FAE5F20E0EB5B0064AB0A /* Assets.xcassets in Resources */,
+				019FAE9420E1FB9E0064AB0A /* Dog on Boat.mp4 in Resources */,
+				019FAE9820E1FB9E0064AB0A /* Bubble Turning Into Ice.mp4 in Resources */,
+				019FAE9620E1FB9E0064AB0A /* Close Up Video Of Flower.mp4 in Resources */,
+				019FAE9220E1FB9E0064AB0A /* Readme.md in Resources */,
 				019FAE5D20E0EB590064AB0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		019FAE6E20E1E4A20064AB0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				019FAE9920E1FB9E0064AB0A /* Bubble Turning Into Ice.mp4 in Resources */,
+				019FAE9720E1FB9E0064AB0A /* Close Up Video Of Flower.mp4 in Resources */,
+				019FAE9320E1FB9E0064AB0A /* Readme.md in Resources */,
+				019FAE9520E1FB9E0064AB0A /* Dog on Boat.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,13 +270,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				019FAE8820E1F85D0064AB0A /* Logger.swift in Sources */,
 				019FAE5A20E0EB590064AB0A /* ViewController.swift in Sources */,
 				019FAE6B20E0EBDF0064AB0A /* VideoComposition.swift in Sources */,
+				019FAE8520E1F7F90064AB0A /* VideoFileSystemHelper.swift in Sources */,
 				019FAE5820E0EB590064AB0A /* AppDelegate.swift in Sources */,
+				019FAE8B20E1F8C30064AB0A /* List+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		019FAE6C20E1E4A20064AB0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				019FAE8620E1F7F90064AB0A /* VideoFileSystemHelper.swift in Sources */,
+				019FAE8320E1E9030064AB0A /* VideoComposition.swift in Sources */,
+				019FAE8C20E1F8C30064AB0A /* List+Extension.swift in Sources */,
+				019FAE7320E1E4A20064AB0A /* Demo_VideoLayerComposition_iOSTests.swift in Sources */,
+				019FAE8920E1F85D0064AB0A /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		019FAE7620E1E4A20064AB0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 019FAE5320E0EB590064AB0A /* Demo_VideoLayerComposition_iOS */;
+			targetProxy = 019FAE7520E1E4A20064AB0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		019FAE5B20E0EB590064AB0A /* Main.storyboard */ = {
@@ -325,6 +473,46 @@
 			};
 			name = Release;
 		};
+		019FAE7720E1E4A20064AB0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C2RR97X77J;
+				INFOPLIST_FILE = Demo_VideoLayerComposition_iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "demo.Demo-VideoLayerComposition-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo_VideoLayerComposition_iOS.app/Demo_VideoLayerComposition_iOS";
+			};
+			name = Debug;
+		};
+		019FAE7820E1E4A20064AB0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C2RR97X77J;
+				INFOPLIST_FILE = Demo_VideoLayerComposition_iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "demo.Demo-VideoLayerComposition-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo_VideoLayerComposition_iOS.app/Demo_VideoLayerComposition_iOS";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -342,6 +530,15 @@
 			buildConfigurations = (
 				019FAE6720E0EB5B0064AB0A /* Debug */,
 				019FAE6820E0EB5B0064AB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		019FAE7920E1E4A20064AB0A /* Build configuration list for PBXNativeTarget "Demo_VideoLayerComposition_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				019FAE7720E1E4A20064AB0A /* Debug */,
+				019FAE7820E1E4A20064AB0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
