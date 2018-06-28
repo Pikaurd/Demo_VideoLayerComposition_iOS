@@ -18,8 +18,8 @@ class ViewController: UIViewController {
         let entities = [
             VideoComposition.Entity(transform: .identity, asset: AVAsset(url: bundle.url(forResource: "Close Up Video Of Flower", withExtension: "mp4")!))
         ]
-        let vc = VideoComposition(entities: entities, renderSize: CGSize(width: 1280, height: 720))
-        
+        let vc = VideoComposition(entities: entities, renderSize: CGSize(width: 1920, height: 1080))
+        VideoFileSystemHelper.removeAllTempFolders()
         
         let tempFolder = VideoFileSystemHelper.createTempFolder()
         let destination = tempFolder.appendingPathComponent("test.mp4")

@@ -25,21 +25,25 @@ public struct VideoComposition {
         let tracks = entities.map { $0.videoTrack(composition: mixComposition, duration: self.maxDuration)! }
         
         let instruction = AVMutableVideoCompositionInstruction()
-        instruction.layerInstructions = zip(entities, tracks).map { $0.0.layerInstruction(videoTrack: $0.1) }
+        instruction.timeRange = CMTimeRange(start: .zero, end: maxDuration)
+//        instruction.layerInstructions = zip(entities, tracks).map { $0.0.layerInstruction(videoTrack: $0.1) }
+        instruction.layerInstructions = entities[0].layerInstructions(videoTrack: tracks[0])
         
         let videoComposition = AVMutableVideoComposition()
         videoComposition.instructions = [instruction]
-        videoComposition.frameDuration = maxDuration
+        videoComposition.frameDuration = CMTime(value: 1, timescale: 24)
         videoComposition.renderSize = renderSize
         
         try? FileManager.default.removeItem(at: destination)
         let exportSession = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
         exportSession?.outputURL = destination
-//        exportSession?.videoComposition = videoComposition
+        exportSession?.videoComposition = videoComposition
         exportSession?.outputFileType = .mp4
         exportSession?.shouldOptimizeForNetworkUse = true
+        log.debug("start")
         exportSession?.exportAsynchronously {
-            print("success: \(destination.path)")
+            log.debug("error: \(String(describing: exportSession?.error))")
+            log.debug("success: \(destination.path)")
         }
     }
     
@@ -54,12 +58,9 @@ public struct VideoComposition {
         /*!
              @method        videoTrack:composition:duration
              @abstract        获取新生成的视频轨道，如果所需时间大于视频本身时间则视频循环放入轨道
-             @param            composition
-             新轨道从这个`AVMutableComposition`中生成
-             @param            duration
-             这个视频轨道需要播放多长时间
-             @result
-             要生成的轨道，如果为.none就是生成失败了
+             @param            composition  新轨道从这个`AVMutableComposition`中生成
+             @param            duration  这个视频轨道需要播放多长时间
+             @result        要生成的轨道，如果为.none就是生成失败了
          */
         public func videoTrack(composition: AVMutableComposition, duration: CMTime) -> AVAssetTrack? {
             guard let assetVideoTrack = asset.tracks(withMediaType: .video).first,
@@ -83,6 +84,32 @@ public struct VideoComposition {
             let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
             instruction.setTransform(transform, at: .zero)
             return instruction
+        }
+        
+        public func layerInstructions(videoTrack: AVAssetTrack) -> [AVVideoCompositionLayerInstruction] {
+            var instructions: [AVVideoCompositionLayerInstruction] = []
+            
+            let ratio = 0.5625
+            let width = 1920
+            let vs:[Int] = (1...width).map { Int(round(ratio * Double($0))) }
+            let rects = vs.reduce([]) { (acc, x) -> [CGRect] in
+                guard let rect = acc.last else { return acc + [CGRect(x: 0, y: 0, width: 1, height: x)] }
+                let height = Int(rect.height)
+                if height == x {
+                    return Array(acc.dropLast()) + [CGRect(x: Int(rect.origin.x), y: 0, width: Int(rect.width) + 1, height: x)]
+                }
+                else {
+                    return acc + [CGRect(x: Int(rect.origin.x + rect.width), y: 0, width: 1, height: x)]
+                }
+            }
+            
+            instructions = rects.map { rect in
+                let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
+                instruction.setCropRectangle(rect, at: .zero)
+                return instruction
+            }
+            
+            return instructions
         }
         
         public static func timeRangsBy(duration: CMTime, neededDuration: CMTime) -> [(CMTimeRange, CMTime)] {
