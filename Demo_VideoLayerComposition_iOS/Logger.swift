@@ -15,12 +15,12 @@ let log = Logger.self
 class Logger {
     class func debug(_ message: @autoclosure () -> Any, _ file: String = #file, _ function: String = #function, line: Int = #line) -> () {
         let fileName = file.split(separator: "/").last ?? "unknow"
-        print("[D] \(fileName) #\(line) >-> \(function): \(message()) <-<")
+        print("[D]\(CFAbsoluteTimeGetCurrent()) \(fileName) #\(line) >-> \(function): \(message()) <-<" as Any)
     }
     
     class func verbose(_ message: @autoclosure () -> Any, _ file: String = #file, _ function: String = #function, line: Int = #line) -> () {
         let fileName = file.split(separator: "/").last ?? "unknow"
-        print("[V] \(fileName) #\(line) >-> \(function): \(message()) <-<")
+        print("[V]\(CFAbsoluteTimeGetCurrent()) \(fileName) #\(line) >-> \(function): \(message()) <-<")
     }
 }
 #else

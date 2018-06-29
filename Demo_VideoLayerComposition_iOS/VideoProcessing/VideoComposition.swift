@@ -26,12 +26,11 @@ public struct VideoComposition {
         
         let instruction = AVMutableVideoCompositionInstruction()
         instruction.timeRange = CMTimeRange(start: .zero, end: maxDuration)
-//        instruction.layerInstructions = zip(entities, tracks).map { $0.0.layerInstruction(videoTrack: $0.1) }
-        instruction.layerInstructions = entities[0].layerInstructions(videoTrack: tracks[0])
+        instruction.layerInstructions = zip(entities, tracks).map({ $0.0.layerInstructions(videoTrack: $0.1) }).flatMap({$0})
         
         let videoComposition = AVMutableVideoComposition()
         videoComposition.instructions = [instruction]
-        videoComposition.frameDuration = CMTime(value: 1, timescale: 24)
+        videoComposition.frameDuration = CMTime(value: 1, timescale: 24)  // FIXME: fps
         videoComposition.renderSize = renderSize
         
         try? FileManager.default.removeItem(at: destination)
@@ -52,7 +51,7 @@ public struct VideoComposition {
     }
     
     public struct Entity {
-        let transform: CGAffineTransform
+        let tileRects: [CGRect]
         let asset: AVAsset
         
         /*!
@@ -80,30 +79,8 @@ public struct VideoComposition {
             return track
         }
         
-        public func layerInstruction(videoTrack: AVAssetTrack) -> AVVideoCompositionLayerInstruction {
-            let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
-            instruction.setTransform(transform, at: .zero)
-            return instruction
-        }
-        
         public func layerInstructions(videoTrack: AVAssetTrack) -> [AVVideoCompositionLayerInstruction] {
-            var instructions: [AVVideoCompositionLayerInstruction] = []
-            
-            let ratio = 0.5625
-            let width = 1920
-            let vs:[Int] = (1...width).map { Int(round(ratio * Double($0))) }
-            let rects = vs.reduce([]) { (acc, x) -> [CGRect] in
-                guard let rect = acc.last else { return acc + [CGRect(x: 0, y: 0, width: 1, height: x)] }
-                let height = Int(rect.height)
-                if height == x {
-                    return Array(acc.dropLast()) + [CGRect(x: Int(rect.origin.x), y: 0, width: Int(rect.width) + 1, height: x)]
-                }
-                else {
-                    return acc + [CGRect(x: Int(rect.origin.x + rect.width), y: 0, width: 1, height: x)]
-                }
-            }
-            
-            instructions = rects.map { rect in
+            let instructions: [AVVideoCompositionLayerInstruction] = tileRects.map { rect in
                 let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
                 instruction.setCropRectangle(rect, at: .zero)
                 return instruction
