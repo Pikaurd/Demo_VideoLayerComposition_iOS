@@ -32,6 +32,7 @@ public struct VideoComposition {
         videoComposition.instructions = [instruction]
         videoComposition.frameDuration = CMTime(value: 1, timescale: 24)  // FIXME: fps
         videoComposition.renderSize = renderSize
+        videoComposition.customVideoCompositorClass = VideoMaskCompositor.self
         
         try? FileManager.default.removeItem(at: destination)
         let exportSession = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
@@ -51,7 +52,7 @@ public struct VideoComposition {
     }
     
     public struct Entity {
-        let tileRects: [CGRect]
+        let cgPath: CGPath
         let asset: AVAsset
         
         /*!
@@ -80,11 +81,7 @@ public struct VideoComposition {
         }
         
         public func layerInstructions(videoTrack: AVAssetTrack) -> [AVVideoCompositionLayerInstruction] {
-            let instructions: [AVVideoCompositionLayerInstruction] = tileRects.map { rect in
-                let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
-                instruction.setCropRectangle(rect, at: .zero)
-                return instruction
-            }
+            let instructions: [AVVideoCompositionLayerInstruction] = [ AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack) ]
             
             return instructions
         }
