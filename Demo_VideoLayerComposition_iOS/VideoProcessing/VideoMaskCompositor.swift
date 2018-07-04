@@ -20,17 +20,9 @@ class VideoMaskCompositor: NSObject, AVVideoCompositing {
         super.init()
     }
 
-    var backgroundPath: CGPath {
-        get {
-            return _backgroundPath
-        }
-    }
+    var backgroundPath: CGPath { get { return _backgroundPath } }
     
-    var cgPaths: [CGPath] {
-        get {
-            return _cgPathes
-        }
-    }
+    var cgPaths: [CGPath] { get { return _cgPathes } }
     
     var sourcePixelBufferAttributes: [String : Any]? {
         return [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
@@ -50,7 +42,7 @@ class VideoMaskCompositor: NSObject, AVVideoCompositing {
 //        assert(cgPaths.count == asyncVideoCompositionRequest.sourceTrackIDs.count, "source track count must match cgPaths count")
         let flag = CVPixelBufferLockFlags(rawValue: 0)
         defer {
-            CVPixelBufferLockBaseAddress(buffer, flag)
+            CVPixelBufferUnlockBaseAddress(buffer, flag)
         }
         CVPixelBufferLockBaseAddress(buffer, flag)
         guard
@@ -64,14 +56,41 @@ class VideoMaskCompositor: NSObject, AVVideoCompositing {
             bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
         )
             else {
-                CVPixelBufferUnlockBaseAddress(buffer, flag)
                 fatalError("create image failed")
         }
 
         context.setFillColor(red: 1, green: 1, blue: 0, alpha: 1)
         context.fill(CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(buffer), height: CVPixelBufferGetHeight(buffer)))
         
+        foo(index: SharedState.default.pathes.count, context: context, asyncVideoCompositionRequest: asyncVideoCompositionRequest)
+        
         asyncVideoCompositionRequest.finish(withComposedVideoFrame: buffer)
+        
+    }
+    
+    func foo(index: Int, context: CGContext, asyncVideoCompositionRequest: AVAsynchronousVideoCompositionRequest) -> () {
+        let trackId = CMPersistentTrackID(index)
+        let path = SharedState.default.pathes[index - 1]
+        guard let buffer = asyncVideoCompositionRequest.sourceFrame(byTrackID: trackId) else {
+            log.debug("Got null buffer: index -> \(index)")
+            return ()
+        }
+        let flag = CVPixelBufferLockFlags(rawValue: 0)
+        defer {
+            CVPixelBufferUnlockBaseAddress(buffer, flag)
+        }
+        
+        // draw
+        let bufferFrame = VideoMaskCompositor.cgImage(from: buffer)!
+        context.resetClip()
+        context.addPath(path)
+        context.clip()
+        context.draw(bufferFrame, in: path.boundingBoxOfPath)
+        
+        // next
+        if index > 1 {
+            foo(index: index - 1, context: context, asyncVideoCompositionRequest: asyncVideoCompositionRequest)
+        }
         
     }
     

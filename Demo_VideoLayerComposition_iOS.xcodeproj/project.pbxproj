@@ -35,6 +35,8 @@
 		01D46A9C20EB244E00CAEC7E /* VideoMaskCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D46A9B20EB244E00CAEC7E /* VideoMaskCompositor.swift */; };
 		01D46AA020EB6E0200CAEC7E /* method-draw-image.svg in Resources */ = {isa = PBXBuildFile; fileRef = 01D46A9F20EB6E0200CAEC7E /* method-draw-image.svg */; };
 		01D46AA120EB6E0200CAEC7E /* method-draw-image.svg in Resources */ = {isa = PBXBuildFile; fileRef = 01D46A9F20EB6E0200CAEC7E /* method-draw-image.svg */; };
+		01D46AA320EC5D8800CAEC7E /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D46AA220EC5D8800CAEC7E /* SharedState.swift */; };
+		01D46AA420EC5D8800CAEC7E /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D46AA220EC5D8800CAEC7E /* SharedState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,7 @@
 		01D46A9920EB1C9400CAEC7E /* PocketSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PocketSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D46A9B20EB244E00CAEC7E /* VideoMaskCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaskCompositor.swift; sourceTree = "<group>"; };
 		01D46A9F20EB6E0200CAEC7E /* method-draw-image.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "method-draw-image.svg"; sourceTree = "<group>"; };
+		01D46AA220EC5D8800CAEC7E /* SharedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SharedState.swift; path = Demo_VideoLayerComposition_iOS/SharedState.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 			children = (
 				019FAE6920E0EBCC0064AB0A /* VideoProcessing */,
 				019FAE5720E0EB590064AB0A /* AppDelegate.swift */,
+				01D46AA220EC5D8800CAEC7E /* SharedState.swift */,
 				019FAE8720E1F85D0064AB0A /* Logger.swift */,
 				019FAE5920E0EB590064AB0A /* ViewController.swift */,
 				019FAE5B20E0EB590064AB0A /* Main.storyboard */,
@@ -289,6 +293,7 @@
 				019FAE8820E1F85D0064AB0A /* Logger.swift in Sources */,
 				019FAE5A20E0EB590064AB0A /* ViewController.swift in Sources */,
 				019FAE6B20E0EBDF0064AB0A /* VideoComposition.swift in Sources */,
+				01D46AA320EC5D8800CAEC7E /* SharedState.swift in Sources */,
 				019FAE8520E1F7F90064AB0A /* VideoFileSystemHelper.swift in Sources */,
 				019FAE5820E0EB590064AB0A /* AppDelegate.swift in Sources */,
 				019FAE8B20E1F8C30064AB0A /* List+Extension.swift in Sources */,
@@ -299,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D46AA420EC5D8800CAEC7E /* SharedState.swift in Sources */,
 				019FAE8620E1F7F90064AB0A /* VideoFileSystemHelper.swift in Sources */,
 				019FAE8320E1E9030064AB0A /* VideoComposition.swift in Sources */,
 				019FAE8C20E1F8C30064AB0A /* List+Extension.swift in Sources */,
